@@ -1,5 +1,7 @@
 import type { BaseLayoutProps } from "fumadocs-ui/layouts/shared";
 import { Book, FileText } from "lucide-react";
+import Image from "next/image";
+import Flex from "@/components/common/flex";
 
 // fill this with your actual GitHub info, for example:
 export const gitConfig = {
@@ -11,8 +13,20 @@ export const gitConfig = {
 export function baseOptions(): BaseLayoutProps {
   return {
     nav: {
-      title: "OpenBangla Keyboard",
       transparentMode: "top",
+      title: (
+        <Flex className="gap-2">
+          <Image
+            src="https://placehold.co/32x32/e2e8f0/475569"
+            alt="placeholder"
+            height={32}
+            width={32}
+            className="rounded-lg"
+            loading="eager"
+          />
+          <span className="font-bold">OpenBangla Keyboard</span>
+        </Flex>
+      ),
     },
     links: [
       {
