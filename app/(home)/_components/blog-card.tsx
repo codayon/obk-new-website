@@ -46,7 +46,7 @@ export default function BlogCard({
             className="mt-1 shrink-0 text-zinc-300 dark:text-zinc-600"
           />
         </Flex>
-        <p className="mt-2 line-clamp-2 text-sm text-zinc-500 leading-relaxed dark:text-zinc-400">
+        <p className="mt-2 line-clamp-2 font-baloo-da-2 text-sm text-zinc-500 leading-relaxed dark:text-zinc-400">
           {description}
         </p>
       </div>
