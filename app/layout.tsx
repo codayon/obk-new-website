@@ -1,29 +1,7 @@
 import type { Metadata } from "next";
 import "./global.css";
 import { RootProvider } from "fumadocs-ui/provider/next";
-import {
-  Baloo_Da_2,
-  Bricolage_Grotesque,
-  Instrument_Sans,
-} from "next/font/google";
-
-const balooDa2 = Baloo_Da_2({
-  subsets: ["bengali"],
-  variable: "--font-baloo-da-2",
-  display: "swap",
-});
-
-const bricolageGrotesque = Bricolage_Grotesque({
-  subsets: ["latin"],
-  variable: "--font-bricolage-grotesque",
-  display: "swap",
-});
-
-const instrumentSans = Instrument_Sans({
-  subsets: ["latin"],
-  variable: "--font-instrument-sans",
-  display: "swap",
-});
+import { balooDa2, bricolageGrotesque, inter } from "./fonts";
 
 export const metadata: Metadata = {
   metadataBase: new URL(
@@ -39,12 +17,10 @@ export default function Layout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${bricolageGrotesque.variable} ${instrumentSans.variable} ${balooDa2.variable}`}
+      className={`${bricolageGrotesque.variable} ${inter.variable} ${balooDa2.variable}`}
       suppressHydrationWarning
     >
-      <body
-        className={`${instrumentSans.className} flex min-h-screen flex-col`}
-      >
+      <body className={`${inter.className} flex min-h-screen flex-col`}>
         <RootProvider>{children}</RootProvider>
       </body>
     </html>
