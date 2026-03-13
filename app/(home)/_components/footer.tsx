@@ -39,15 +39,14 @@ export default function Footer() {
       </section>
       <footer className="border-emerald-900/50 border-t bg-emerald-950 py-8 dark:border-zinc-900 dark:bg-black">
         <Container>
-          <Flex className="flex-col items-center justify-between gap-4 font-medium text-emerald-100/70 text-sm md:flex-row md:text-base dark:text-zinc-500">
-            <p className="text-center md:text-left">
-              © 2015-2026 OpenBangla Team. All rights reserved.
+          <Flex className="flex-col items-center justify-center gap-2 font-medium text-emerald-100/70 text-sm md:text-base dark:text-zinc-500">
+            <p className="text-center">
+              © 2015–{new Date().getFullYear()} OpenBangla Team.
             </p>
-            <p>
-              Made with 💖 by{" "}
-              <span className="text-amber-200 dark:text-amber-500/80">
-                Muhsin
-              </span>
+            <p className="text-center text-xs opacity-70">
+              Software: <a href="https://www.gnu.org/licenses/gpl-3.0.html" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-400 dark:hover:text-zinc-300">GPL-3.0</a>
+              <span className="mx-2">•</span>
+              Content: <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-400 dark:hover:text-zinc-300">CC BY-SA 4.0</a>
             </p>
           </Flex>
         </Container>
