@@ -1,4 +1,4 @@
-import Flex from "@/components/common/flex";
+import Flex from "@/app/(home)/_components/common/common/flex";
 
 interface FeatureCardProps {
   icon: React.ReactNode;

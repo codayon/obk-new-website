@@ -1,5 +1,5 @@
-import Button from "@/components/common/button";
-import Flex from "@/components/common/flex";
+import Button from "@/app/(home)/_components/ui/button";
+import Flex from "@/app/(home)/_components/common/common/flex";
 
 interface DownloadCardProps {
   title: string;

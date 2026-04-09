@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Container from "@/components/common/container";
-import Flex from "@/components/common/flex";
+import Container from "@/app/(home)/_components/common/common/container";
+import Flex from "@/app/(home)/_components/common/common/flex";
 import { Facebook, GitHub, Mail, Twitter } from "../ui/icons";
 
 export default function Footer() {

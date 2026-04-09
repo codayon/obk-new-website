@@ -1,5 +1,5 @@
-import Container from "@/components/common/container";
-import Flex from "@/components/common/flex";
+import Container from "@/app/(home)/_components/common/common/container";
+import Flex from "@/app/(home)/_components/common/common/flex";
 import DownloadCard from "../ui/download-card";
 import { Linux, MacOS, Windows } from "../ui/icons";
 

@@ -1,7 +1,7 @@
 import type { BaseLayoutProps } from "fumadocs-ui/layouts/shared";
 import { Book, FileText } from "lucide-react";
 import Image from "next/image";
-import Flex from "@/components/common/flex";
+import Flex from "@/app/(home)/_components/common/common/flex";
 import { appName, gitConfig } from "./shared";
 
 export function baseOptions(): BaseLayoutProps {

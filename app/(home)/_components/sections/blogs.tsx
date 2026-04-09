@@ -1,4 +1,4 @@
-import Container from "@/components/common/container";
+import Container from "@/app/(home)/_components/common/common/container";
 import BlogCard from "../ui/blog-card";
 
 const BLOGS = [
