@@ -8,9 +8,9 @@ import { createRelativeLink } from "fumadocs-ui/mdx";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { LLMCopyButton, ViewOptions } from "@/components/ai/page-actions";
+import { getMDXComponents } from "@/components/mdx";
 import { gitConfig } from "@/lib/shared";
 import { getPageImage, source } from "@/lib/source";
-import { getMDXComponents } from "@/components/mdx";
 
 export default async function Page(props: PageProps<"/docs/[[...slug]]">) {
   const params = await props.params;

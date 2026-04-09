@@ -61,16 +61,16 @@ export default function Features() {
         <h2 className="mx-auto max-w-md text-center font-bold font-bricolage-grotesque text-3xl text-zinc-900 md:text-4xl dark:text-zinc-50">
           Everything You Need to Type Bangla
         </h2>
-          <div className="grid grid-cols-1 gap-6 pt-12 md:grid-cols-2 md:pt-16 lg:grid-cols-3">
-            {FEATURES.map((feature) => (
-              <FeatureCard
-                key={feature.title}
-                icon={feature.icon}
-                title={feature.title}
-                description={feature.description}
-              />
-            ))}
-          </div>
+        <div className="grid grid-cols-1 gap-6 pt-12 md:grid-cols-2 md:pt-16 lg:grid-cols-3">
+          {FEATURES.map((feature) => (
+            <FeatureCard
+              key={feature.title}
+              icon={feature.icon}
+              title={feature.title}
+              description={feature.description}
+            />
+          ))}
+        </div>
       </Container>
     </section>
   );

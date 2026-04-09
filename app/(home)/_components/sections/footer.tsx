@@ -44,9 +44,25 @@ export default function Footer() {
               © 2015–{new Date().getFullYear()} OpenBangla Team.
             </p>
             <p className="text-center text-xs opacity-70">
-              Software: <a href="https://www.gnu.org/licenses/gpl-3.0.html" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-400 dark:hover:text-zinc-300">GPL-3.0</a>
+              Software:{" "}
+              <a
+                href="https://www.gnu.org/licenses/gpl-3.0.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-emerald-400 dark:hover:text-zinc-300"
+              >
+                GPL-3.0
+              </a>
               <span className="mx-2">•</span>
-              Content: <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-400 dark:hover:text-zinc-300">CC BY-SA 4.0</a>
+              Content:{" "}
+              <a
+                href="https://creativecommons.org/licenses/by-sa/4.0/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-emerald-400 dark:hover:text-zinc-300"
+              >
+                CC BY-SA 4.0
+              </a>
             </p>
           </Flex>
         </Container>
