@@ -10,7 +10,7 @@ author: Muhammad Mominul Huque
 
 ওপেনবাংলা কিবোর্ড এখন স্বয়ংক্রিয়ভাবে নতুন আপডেটের জন্য ব্যবহারকারীকে অবহিত করবে। নতুন আপডেট পাওয়া গেলে ওপেনবাংলা কিবোর্ড ব্যবহারকারীকে জানাবে:
 
-![update notification](./update-notification.png)
+![update notification](./images/update-notification.png)
 
 ## ইন্সটলেশন
 
