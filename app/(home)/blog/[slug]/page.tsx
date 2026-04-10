@@ -3,7 +3,7 @@ import defaultMdxComponents from "fumadocs-ui/mdx";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { blog, getPageImage } from "@/lib/source";
+import { blog, getBlogImage } from "@/lib/source";
 
 export default async function Page(props: {
   params: Promise<{ slug: string }>;
@@ -68,7 +68,7 @@ export async function generateMetadata(
     title: page.data.title,
     description: page.data.description ?? "A blog post by OpenBangla Team",
     openGraph: {
-      images: getPageImage(page).url,
+      images: getBlogImage(page).url,
     },
   };
 }

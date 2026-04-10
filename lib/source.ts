@@ -6,6 +6,7 @@ import {
   blogRoute,
   docsContentRoute,
   docsImageRoute,
+  blogImageRoute,
   docsRoute,
 } from "./shared";
 
@@ -27,6 +28,15 @@ export function getPageImage(page: InferPageType<typeof source>) {
   return {
     segments,
     url: `${docsImageRoute}/${segments.join("/")}`,
+  };
+}
+
+export function getBlogImage(page: InferPageType<typeof blog>) {
+  const segments = [...page.slugs, "image.png"];
+
+  return {
+    segments,
+    url: `${blogImageRoute}/${segments.join("/")}`,
   };
 }
 
