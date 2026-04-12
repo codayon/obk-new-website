@@ -1,10 +1,10 @@
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 import { ImageResponse } from "@takumi-rs/image-response";
 import { generate as DefaultImage } from "fumadocs-ui/og/takumi";
 import { notFound } from "next/navigation";
 import { appName } from "@/lib/shared";
 import { blog, getBlogImage } from "@/lib/source";
-import { readFileSync } from "node:fs";
-import { join } from "node:path";
 
 export const revalidate = false;
 
@@ -31,6 +31,7 @@ export async function GET(
       style={{
         fontSynthesisWeight: "none",
         fontFamily: "Noto Sans Bengali",
+        fontVariationSettings: "'wght' 700, 'wdth' 95",
         lineHeight: 1.25,
         width: 1200,
         height: 630,
@@ -47,24 +48,6 @@ export async function GET(
       height: 630,
       format: "webp",
       fonts: [
-        {
-          name: "Noto Sans Bengali",
-          data: fontData,
-          weight: 100,
-          style: "normal",
-        },
-        {
-          name: "Noto Sans Bengali",
-          data: fontData,
-          weight: 200,
-          style: "normal",
-        },
-        {
-          name: "Noto Sans Bengali",
-          data: fontData,
-          weight: 300,
-          style: "normal",
-        },
         {
           name: "Noto Sans Bengali",
           data: fontData,
@@ -87,18 +70,6 @@ export async function GET(
           name: "Noto Sans Bengali",
           data: fontData,
           weight: 700,
-          style: "normal",
-        },
-        {
-          name: "Noto Sans Bengali",
-          data: fontData,
-          weight: 800,
-          style: "normal",
-        },
-        {
-          name: "Noto Sans Bengali",
-          data: fontData,
-          weight: 900,
           style: "normal",
         },
       ],
