@@ -19,8 +19,8 @@ export async function GET(
   const fontData = readFileSync(
     join(
       process.cwd(),
-      "public",
-      "fonts",
+      "app",
+      "_fonts",
       "noto-sans-bengali",
       "NotoSansBengali[wdth,wght].woff2",
     ),

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./global.css";
 import { RootProvider } from "fumadocs-ui/provider/next";
-import { bricolageGrotesque, inter } from "./fonts";
+import { bricolageGrotesque, inter } from "./_fonts";
 
 export const metadata: Metadata = {
   metadataBase: new URL(
