@@ -10,7 +10,7 @@ const buttonVariants = cva(
         default:
           "border border-transparent bg-emerald-700 text-white hover:bg-emerald-800/90 dark:bg-emerald-700 dark:hover:bg-emerald-600/90",
         outline:
-          "border border-[#5D5D5D] bg-transparent text-[#5D5D5D] hover:border-transparent hover:bg-gray-300 hover:text-white dark:text-gray-100 dark:hover:bg-gray-300/30",
+          "border border-[#5D5D5D] bg-transparent text-[#5D5D5D] hover:border-transparent hover:bg-gray-300 dark:text-gray-100 dark:hover:bg-gray-300/30 dark:hover:text-white",
       },
       size: {
         default: "px-7 py-4 font-semibold",
