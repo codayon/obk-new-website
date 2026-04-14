@@ -22,7 +22,7 @@ export default function DownloadCard({
         {description}
       </p>
       <Button
-        className="hover:border-transparent hover:bg-[#0D8C5E]/95 hover:text-white"
+        className="hover:bg-emerald-800/90 dark:hover:bg-emerald-600/90"
         variant={"outline"}
       >
         Download

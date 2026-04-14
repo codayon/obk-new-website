@@ -3,17 +3,17 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/cn";
 
 const buttonVariants = cva(
-  "items-center justify-center rounded-2xl ease-in-out duration-200",
+  "items-center justify-center rounded-2xl duration-200 ease-in-out",
   {
     variants: {
       variant: {
         default:
-          "bg-[#0D8C5E] hover:bg-[#0D8C5E]/95 text-white border border-transparent",
+          "border border-transparent bg-emerald-700 text-white hover:bg-emerald-800/90 dark:bg-emerald-700 dark:hover:bg-emerald-600/90",
         outline:
-          "bg-transparent hover:bg-[#5D5D5D]/5 text-[#5D5D5D] border border-[#5D5D5D]",
+          "border border-[#5D5D5D] bg-transparent text-[#5D5D5D] hover:border-transparent hover:bg-gray-300 hover:text-white dark:text-gray-100 dark:hover:bg-gray-300/30",
       },
       size: {
-        default: "font-semibold px-7 py-4",
+        default: "px-7 py-4 font-semibold",
       },
     },
     defaultVariants: {
