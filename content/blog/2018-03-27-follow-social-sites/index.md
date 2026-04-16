@@ -1,7 +1,7 @@
 ---
-title: Follow OpenBangla Keyboard on Social Sites!
 date: 2018-03-27
-image: images/blog/facebook_twitter_logo_combo1.png
+title: "Follow OpenBangla Keyboard on Social Sites!"
+description: "OpenBangla Keyboard is now available on twitter and on facebook. Follow and like OpenBangla Keyboard on social sites to always stay updated!"
 author: Muhammad Mominul Huque
 ---
 

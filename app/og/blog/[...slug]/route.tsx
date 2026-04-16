@@ -39,7 +39,7 @@ export async function GET(
     >
       <DefaultImage
         title={page.data.title}
-        description={page.data.description || `By ${page.data.author}`}
+        description={`By ${page.data.author}`}
         site={appName}
       />
     </div>,

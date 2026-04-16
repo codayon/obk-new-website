@@ -66,7 +66,7 @@ export async function generateMetadata(
 
   return {
     title: page.data.title,
-    description: page.data.description ?? "A blog post by OpenBangla Team",
+    description: page.data.description ?? "A blog post by OpenBangla Team.",
     openGraph: {
       images: getBlogImage(page).url,
     },

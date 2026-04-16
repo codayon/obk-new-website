@@ -1,6 +1,7 @@
 ---
-title: "OpenBangla Keyboard 1.2.0 - Released!"
 date: 2017-07-17
+title: "OpenBangla Keyboard 1.2.0 - Released!"
+description: "We're proudly announcing the release of OpenBangla Keyboard version 1.2.0, an Open Source Bengali input method."
 author: Muhammad Mominul Huque
 ---
 

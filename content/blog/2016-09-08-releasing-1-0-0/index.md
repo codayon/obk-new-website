@@ -1,6 +1,7 @@
 ---
-title: "OpenBangla Keyboard 1.0.0: Provat Released!"
 date: 2016-09-08
+title: "OpenBangla Keyboard 1.0.0: Provat Released!"
+description: "We're proudly announcing the release of OpenBangla Keyboard version 1.0.0 nicknamed Probhat(প্রভাত), an Open Source Bengali input method."
 author: Muhammad Mominul Huque
 ---
 
