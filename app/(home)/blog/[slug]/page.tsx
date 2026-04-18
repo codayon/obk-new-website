@@ -3,6 +3,7 @@ import defaultMdxComponents from "fumadocs-ui/mdx";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { formatBlogPostDate } from "@/lib/blog";
 import { blog, getBlogImage } from "@/lib/source";
 
 export default async function Page(props: {
@@ -19,10 +20,12 @@ export default async function Page(props: {
       <div className="mx-auto w-full max-w-350 px-4">
         <div className="mt-8 rounded-xl border px-4 py-8 md:px-8">
           <h1 className="mb-2 font-bold text-3xl">{page.data.title}</h1>
-          <p className="mb-4 text-fd-muted-foreground">
-            {page.data.description}
-          </p>
-          <Link href="/blog">Back</Link>
+          <Link
+            href="/blog"
+            className="border-zinc-700 border-b-2 dark:border-zinc-300"
+          >
+            Back
+          </Link>
         </div>
       </div>
 
@@ -32,7 +35,7 @@ export default async function Page(props: {
           <Mdx components={defaultMdxComponents} />
         </div>
 
-        <div className="mt-8 flex flex-col gap-4 text-sm">
+        <div className="mt-8 flex flex-col gap-4 text-sm sm:flex-row">
           <div>
             <p className="mb-1 text-fd-muted-foreground">Written by</p>
             <p className="font-medium">{page.data.author}</p>
@@ -40,9 +43,7 @@ export default async function Page(props: {
 
           <div>
             <p className="mb-1 text-fd-muted-foreground text-sm">At</p>
-            <p className="font-medium">
-              {new Date(page.data.date).toDateString()}
-            </p>
+            <p className="font-medium">{formatBlogPostDate(page)}</p>
           </div>
         </div>
       </article>
@@ -66,7 +67,7 @@ export async function generateMetadata(
 
   return {
     title: page.data.title,
-    description: page.data.description ?? "A blog post by OpenBangla Team.",
+    description: page.data.description,
     openGraph: {
       images: getBlogImage(page).url,
     },
