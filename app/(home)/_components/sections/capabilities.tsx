@@ -54,6 +54,7 @@ export default function Capabilities() {
     let ticking = false;
 
     const handleScroll = () => {
+      if (window.innerWidth < 768) return;
       if (!ticking) {
         requestAnimationFrame(() => {
           if (!containerRef.current) return;
@@ -90,19 +91,18 @@ export default function Capabilities() {
     // The height of this container (400vh) determines how long the user scrolls
     <section
       ref={containerRef}
-      className="relative h-[500vh] bg-neutral-50 dark:bg-neutral-950"
+      className="relative h-auto md:h-[500vh] bg-neutral-50 dark:bg-neutral-950"
     >
-      <div className="sticky top-0 flex h-screen items-center overflow-hidden">
+      <div className="relative md:sticky top-0 flex h-auto md:h-screen items-center overflow-hidden py-16 md:py-0">
         <Container>
           <Flex className="flex-col items-center justify-between gap-12 lg:flex-row lg:gap-16">
-            {/* Left Side: Images */}
-            <div className="relative h-75 w-full max-w-125 overflow-hidden rounded-3xl bg-zinc-200 lg:h-125 lg:w-1/2 dark:bg-zinc-800">
+            {/* Left Side: Images - Hidden on mobile, shown on iPads and up */}
+            <div className="hidden md:block relative h-75 w-full max-w-125 overflow-hidden rounded-3xl bg-zinc-200 lg:h-125 lg:w-1/2 dark:bg-zinc-800">
               {CAPABILITIES.map((cap, i) => (
                 <div
                   key={cap.id}
-                  className={`absolute inset-0 transition-all duration-300 ease-in-out ${
-                    activeIndex === i ? "opacity-100" : "opacity-0"
-                  }`}
+                  className={`absolute inset-0 transition-all duration-300 ease-in-out ${activeIndex === i ? "opacity-100" : "opacity-0"
+                    }`}
                 >
                   <Image
                     src={cap.image}
@@ -129,24 +129,26 @@ export default function Capabilities() {
                   type="button"
                   key={capability.id}
                   onClick={() => {
-                    // Optional: Scroll to the specific part of the section when clicked
-                    if (!containerRef.current) return;
+                    // Only scroll on larger screens where the animation exists
+                    if (!containerRef.current || window.innerWidth < 768) return;
 
                     const scrollPos =
                       containerRef.current.offsetTop +
                       i *
-                        (containerRef.current.scrollHeight /
-                          CAPABILITIES.length);
+                      (containerRef.current.scrollHeight /
+                        CAPABILITIES.length);
                     window.scrollTo({ top: scrollPos, behavior: "smooth" });
                   }}
-                  className={`flex flex-col gap-2 rounded-2xl border p-6 text-left transition-all duration-300 ${
-                    activeIndex === i
-                      ? "border-emerald-500/50 bg-white shadow-md dark:bg-zinc-900"
-                      : "border-transparent bg-transparent opacity-50 hover:opacity-100"
-                  }`}
+                  className={`flex flex-col gap-2 rounded-2xl border p-6 text-left transition-all duration-300 border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 shadow-sm ${activeIndex === i
+                    ? "md:border-emerald-500/50 md:shadow-md"
+                    : "md:opacity-50 md:shadow-none hover:md:opacity-100"
+                    }`}
                 >
                   <h3
-                    className={`font-bold transition-colors ${activeIndex === i ? "text-emerald-600 dark:text-emerald-400" : "text-zinc-600 dark:text-zinc-400"}`}
+                    className={`font-bold transition-colors text-zinc-900 dark:text-zinc-50 ${activeIndex === i
+                      ? "md:text-emerald-600 md:dark:text-emerald-400"
+                      : "md:text-zinc-600 md:dark:text-zinc-400"
+                      }`}
                   >
                     {capability.label}
                   </h3>
