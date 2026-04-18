@@ -1,18 +1,11 @@
+import Link from "next/link";
 import Container from "@/app/(home)/_components/common/container";
+import { formatBlogPostDate, getLatestBlogPosts } from "@/lib/blog";
 import BlogCard from "../ui/blog-card";
 
-const BLOGS = [
-  {
-    imgSrc: "https://placehold.co/160x90",
-    imgAlt: "placeholder",
-    title: "বিশেষ বিজ্ঞপ্তি!",
-    date: "October 2, 2026",
-    description:
-      "প্রায় ২ বছর পর আপনাদের কাছে ওপেনবাংলা কিবোর্ডের ২.০.০ সংস্করণ এনে দিতে পেরে আমরা খুবই আনন্দিত। তবে আগেই বলে দিতে চাই, এযাবতকালে ওপেনবাংলা কিবোর্ডের অন্যতম বড় রিলিজ হতে চলেছে এটি!",
-  },
-];
-
 export default function Blogs() {
+  const posts = getLatestBlogPosts(4);
+
   return (
     <section className="bg-neutral-50 py-14 dark:bg-neutral-950">
       <Container>
@@ -25,15 +18,15 @@ export default function Blogs() {
           </p>
         </div>
         <div className="grid grid-cols-1 gap-6 pt-10 lg:grid-cols-2">
-          {BLOGS.map((blog) => (
-            <BlogCard
-              key={blog.title}
-              imgSrc={blog.imgSrc}
-              imgAlt={blog.imgAlt}
-              title={blog.title}
-              date={blog.date}
-              description={blog.description}
-            />
+          {posts.map((post) => (
+            <Link key={post.url} href={post.url} className="block">
+              <BlogCard
+                title={post.data.title}
+                date={formatBlogPostDate(post)}
+                author={post.data.author}
+                description={post.data.description ?? ""}
+              />
+            </Link>
           ))}
         </div>
       </Container>

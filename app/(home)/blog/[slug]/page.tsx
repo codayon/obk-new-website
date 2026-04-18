@@ -16,7 +16,7 @@ export default async function Page(props: {
 
   return (
     <>
-      <div className="mx-auto w-full max-w-[1400px] px-4">
+      <div className="mx-auto w-full max-w-350 px-4">
         <div className="mt-8 rounded-xl border px-4 py-8 md:px-8">
           <h1 className="mb-2 font-bold text-3xl">{page.data.title}</h1>
           <p className="mb-4 text-fd-muted-foreground">
@@ -26,7 +26,7 @@ export default async function Page(props: {
         </div>
       </div>
 
-      <article className="mx-auto flex w-full max-w-[1400px] flex-col px-4 py-8">
+      <article className="mx-auto flex w-full max-w-350 flex-col px-4 py-8">
         <div className="prose min-w-0">
           <InlineTOC items={page.data.toc} />
           <Mdx components={defaultMdxComponents} />

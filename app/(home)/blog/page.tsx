@@ -1,20 +1,11 @@
-import { PathUtils } from "fumadocs-core/source";
 import Link from "next/link";
-import { blog } from "@/lib/source";
-
-function getName(path: string) {
-  return PathUtils.basename(path, PathUtils.extname(path));
-}
+import { formatBlogPostDate, getLatestBlogPosts } from "@/lib/blog";
 
 export default function Page() {
-  const posts = [...blog.getPages()].sort(
-    (a, b) =>
-      new Date(b.data.date ?? getName(b.path)).getTime() -
-      new Date(a.data.date ?? getName(a.path)).getTime(),
-  );
+  const posts = getLatestBlogPosts();
 
   return (
-    <main className="mx-auto w-full max-w-[1400px] flex-1 px-4 py-8">
+    <main className="mx-auto w-full max-w-350 flex-1 px-4 py-8">
       <h1 className="mb-8 font-bold text-4xl">Latest Blog Posts</h1>
       <div className="grid grid-cols-1 gap-2 md:grid-cols-3 xl:grid-cols-4">
         {posts.map((post) => (
@@ -29,7 +20,7 @@ export default function Page() {
             </p>
 
             <p className="mt-auto pt-4 text-brand text-xs">
-              {new Date(post.data.date ?? getName(post.path)).toDateString()}
+              {formatBlogPostDate(post)}
             </p>
           </Link>
         ))}
